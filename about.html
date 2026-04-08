@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBhoomi | About</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <style>
+      :root {
+        --saffron: #ff6b00;
+        --gold: #ffd700;
+        --deep-blue: #0a1628;
+        --glass: rgba(255, 255, 255, 0.08);
+        --glass-border: rgba(255, 255, 255, 0.15);
+        --text-primary: #ffffff;
+        --text-muted: rgba(255, 255, 255, 0.5);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        background: var(--deep-blue);
+        color: var(--text-primary);
+      }
+
+      .page {
+        display: none;
+        padding-top: 80px;
+      }
+
+      .page.active {
+        display: block;
+      }
+
+      .section {
+        padding: 80px 40px;
+      }
+
+      .glass {
+        background: var(--glass);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .about-text h2 {
+        font-family: "Cinzel", serif;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        color: var(--text-muted);
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+
+      .feature-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .feature-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 15px;
+      }
+
+      .feature-list li::before {
+        content: "✦";
+        color: var(--saffron);
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          padding: 60px 20px;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo" onclick="showPage('home')">
+        🏛️ DEVBHOOMI
+        <span>Incredible India Travels</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-btn"> Home </a>
+        <a href="destination.html" class="nav-btn"> Destinations </a>
+        <a href="pilgrimage.html" class="nav-btn"> Pilgrimage </a>
+        <a href="gallery.html" class="nav-btn"> Gallery </a>
+        <a href="about.html" class="nav-btn"> About </a>
+        <a href="form.html" class="nav-btn cta"> Book Now </a>
+      </div>
+    </nav>
+
+    <div id="page-about" class="page active">
+      <div class="section">
+        <div class="about-grid">
+          <div class="about-text">
+            <div
+              style="
+                color: var(--saffron);
+                font-size: 13px;
+                letter-spacing: 2px;
+                margin-bottom: 12px;
+              "
+            >
+              ABOUT DEVBHOOMI TRAVELS
+            </div>
+            <h2
+              style="
+                font-family: &quot;Cinzel&quot;, serif;
+                font-size: 36px;
+                margin-bottom: 20px;
+                color: white;
+              "
+            >
+              Your Trusted Partner for<br /><span style="color: var(--gold)"
+                >Sacred Journeys</span
+              >
+            </h2>
+            <p
+              style="
+                color: var(--text-muted);
+                line-height: 1.8;
+                margin-bottom: 16px;
+              "
+            >
+              Devbhoomi Travels has been guiding pilgrims and travelers across
+              the sacred land of Bharat for over 15 years. We believe every
+              journey to India's holy sites is a transformative spiritual
+              experience.
+            </p>
+            <p
+              style="
+                color: var(--text-muted);
+                line-height: 1.8;
+                margin-bottom: 16px;
+              "
+            >
+              From the icy heights of Kedarnath to the warm shores of
+              Rameswaram, we have walked every path so that your journey is
+              safe, soulful, and seamless.
+            </p>
+            <ul class="feature-list">
+              <li>100% vegetarian & sattvic meal options available</li>
+              <li>Expert pandit and spiritual guide at every destination</li>
+              <li>Group discounts for families and senior citizens</li>
+              <li>Emergency medical assistance throughout journey</li>
+            </ul>
+          </div>
+          <div>
+            <div class="glass" style="padding: 32px; margin-bottom: 24px">
+              <div
+                style="
+                  font-family: &quot;Cinzel&quot;, serif;
+                  font-size: 20px;
+                  margin-bottom: 20px;
+                  color: var(--gold);
+                "
+              >
+                Contact Us
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 16px">
+                <div style="display: flex; gap: 12px; align-items: center">
+                  <span style="font-size: 20px">📞</span>
+                  <div>
+                    <div style="font-weight: 600">+91 90XXX XXXXX</div>
+                    <div style="font-size: 13px; color: var(--text-muted)">
+                      24/7 Pilgrimage Helpline
+                    </div>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center">
+                  <span style="font-size: 20px">✉️</span>
+                  <div>
+                    <div style="font-weight: 600">DevBhoomi@gmail.com</div>
+                    <div style="font-size: 13px; color: var(--text-muted)">
+                      Response within , 7 Hours
+                    </div>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center">
+                  <span style="font-size: 20px">📍</span>
+                  <div>
+                    <div style="font-weight: 600">Lucknow</div>
+                    <div style="font-size: 13px; color: var(--text-muted)">
+                      Lucknow - 226001
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glass" style="padding: 28px">
+              <div
+                style="
+                  font-family: &quot;Cinzel&quot;, serif;
+                  font-size: 16px;
+                  margin-bottom: 16px;
+                  color: var(--gold);
+                "
+              >
+                Office Hours
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  font-size: 14px;
+                  color: var(--text-muted);
+                "
+              >
+                <div style="display: flex; justify-content: space-between">
+                  <span>Monday - Saturday</span
+                  ><span style="color: white">09:00 AM - 07:00 PM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                  <span>Sunday</span
+                  ><span style="color: white">09:00 AM - 07:00 PM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                  <span>Emergency Line</span
+                  ><span style="color: var(--saffron)">24/7 Available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

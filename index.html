@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBhoomi | Incredible India Travels</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="bg-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <nav>
+      <div class="nav-logo" onclick="showPage('home')">
+        🏛️ DEVBHOOMI
+        <span>Incredible India Travels</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-btn"> Home </a>
+        <a href="destination.html" class="nav-btn"> Destinations </a>
+        <a href="pilgrimage.html" class="nav-btn"> Pilgrimage </a>
+        <a href="gallery.html" class="nav-btn"> Gallery </a>
+        <a href="about.html" class="nav-btn"> About </a>
+        <a href="form.html" class="nav-btn cta"> Book Now </a>
+      </div>
+    </nav>
+
+    <div id="page-home" class="page active">
+      <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <div class="hero-badge">✦ INCREDIBLE INDIA TRAVELS ✦</div>
+          <h1>
+            Discover the Soul of
+            <i style="color: #ff6b00; font-weight: 500">भारत</i>
+          </h1>
+          <p>
+            From the snow-capped Himalayas to the sunlit shores of Kanyakumari —
+            every journey is a pilgrimage of the heart
+          </p>
+          <div class="hero-btns">
+            <a href="pilgrimage.html" class="btn-primary"
+              >Explore Destinations</a
+            >
+            <a href="pilgrimage.html" class="btn-secondary"
+              >Sacred Pilgrimages</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          padding: 0 40px;
+          margin-top: -60px;
+          position: relative;
+          z-index: 10;
+        "
+      >
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Destinations</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">50K+</div>
+            <div class="stat-label">Happy Pilgrims</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">12</div>
+            <div class="stat-label">Jyotirlingas</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">28</div>
+            <div class="stat-label">States Covered</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Featured Destinations</div>
+        <div class="divider"></div>
+        <div class="section-sub">
+          Handpicked experiences across the divine land of India
+        </div>
+        <div class="cards-grid" id="homeDestCards"></div>
+        <div style="text-align: center; margin-top: 40px">
+          <a href="destination.html" class="btn-secondary"
+            >View All Destinations →</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="section"
+        style="
+          background: rgba(255, 255, 255, 0.02);
+          border-top: 1px solid var(--glass-border);
+          border-bottom: 1px solid var(--glass-border);
+        "
+      >
+        <div class="section-title">Why Choose Devbhoomi</div>
+        <div class="divider"></div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+          "
+        >
+          <div
+            class="glass"
+            style="padding: 28px; text-align: center; border-radius: 20px"
+          >
+            <div style="font-size: 36px; margin-bottom: 16px">🛡️</div>
+            <div
+              style="
+                font-family: &quot;Cinzel&quot;, serif;
+                font-size: 16px;
+                margin-bottom: 10px;
+              "
+            >
+              Safe & Trusted
+            </div>
+            <div style="font-size: 14px; color: var(--text-muted)">
+              15+ years of curating sacred journeys across India
+            </div>
+          </div>
+          <div
+            class="glass"
+            style="padding: 28px; text-align: center; border-radius: 20px"
+          >
+            <div style="font-size: 36px; margin-bottom: 16px">🧘</div>
+            <div
+              style="
+                font-family: &quot;Cinzel&quot;, serif;
+                font-size: 16px;
+                margin-bottom: 10px;
+              "
+            >
+              Expert Guides
+            </div>
+            <div style="font-size: 14px; color: var(--text-muted)">
+              Learned scholars & experienced spiritual guides
+            </div>
+          </div>
+          <div
+            class="glass"
+            style="padding: 28px; text-align: center; border-radius: 20px"
+          >
+            <div style="font-size: 36px; margin-bottom: 16px">🌸</div>
+            <div
+              style="
+                font-family: &quot;Cinzel&quot;, serif;
+                font-size: 16px;
+                margin-bottom: 10px;
+              "
+            >
+              All Inclusive
+            </div>
+            <div style="font-size: 14px; color: var(--text-muted)">
+              Accommodation, meals, transport & rituals included
+            </div>
+          </div>
+          <div
+            class="glass"
+            style="padding: 28px; text-align: center; border-radius: 20px"
+          >
+            <div style="font-size: 36px; margin-bottom: 16px">📿</div>
+            <div
+              style="
+                font-family: &quot;Cinzel&quot;, serif;
+                font-size: 16px;
+                margin-bottom: 10px;
+              "
+            >
+              24/7 Support
+            </div>
+            <div style="font-size: 14px; color: var(--text-muted)">
+              Round the clock assistance throughout your journey
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

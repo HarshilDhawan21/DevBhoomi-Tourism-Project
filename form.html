@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevBhoomi | Booking Form</title>
+  <style>
+    .booking-box {
+      max-width: 500px;
+      margin: 100px auto;
+      padding: 25px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .booking-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #ff6b00;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff8533;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+
+    
+    .success-box {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .success-box.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    
+    .ticket {
+      width: 380px;
+      padding: 24px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #0a1628, #0d2137);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+      color: white;
+    }
+
+    
+    .ticket-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .ticket-header h2 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .booking-id {
+      font-size: 14px;
+      color: #ff6b00;
+      font-weight: 600;
+    }
+
+    
+    .ticket-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ticket-body .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    }
+
+    .ticket-body .row span:first-child {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    
+    .ticket-body hr {
+      margin: 12px 0;
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    
+    .ticket-footer {
+      margin-top: 16px;
+      padding-top: 10px;
+      border-top: 2px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    
+    .total-price {
+      color: #ffd700;
+      font-size: 20px;
+    }
+
+    
+    .ticket button {
+      width: 100%;
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff6b00, #ff8533);
+      border: none;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .ticket button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+
+<body>
+  <nav>
+  <div class="nav-logo" onclick="showPage('home')">
+    🏛️ DEVBHOOMI
+    <span>Incredible India Travels</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-btn"> Home </a>
+    <a href="destination.html" class="nav-btn"> Destinations </a>  
+    <a href="pilgrimage.html" class="nav-btn"> Pilgrimage </a>
+    <a href="gallery.html" class="nav-btn"> Gallery </a>
+    <a href="about.html" class="nav-btn"> About </a>
+    <a href="form.html" class="nav-btn cta"> Book Now </a>
+  </div>
+</nav>
+  <div class="booking-box">
+    <h2>Book Your Journey 🛕</h2>
+
+    <form id="bookingForm" onsubmit="event.preventDefault(); validateForm();">
+      <div class="input-group">
+        <label>Full Name *</label>
+        <input type="text" id="name" placeholder="Enter your name" />
+        <small class="error" id="err-name"></small>
+      </div>
+
+      <div class="input-group">
+        <label>Email *</label>
+        <input type="email" id="email" placeholder="Enter email" />
+        <small class="error" id="err-email"></small>
+      </div>
+
+      <div class="input-group">
+        <label>Mobile *</label>
+        <input type="text" id="mobile" placeholder="10-digit number" maxlength="10"/>
+        <small class="error" id="err-mobile"></small>
+      </div>
+
+      <div class="input-group">
+        <label>Destination *</label>
+        <select id="destination">
+          <option value="">Select Destination</option>
+
+          <option>Varanasi - Spiritual capital, Ganga Aarti - ₹8500</option>
+
+          <option>Kedarnath - Jyotirlinga in Himalayas - ₹15000</option>
+
+          <option>Vrindavan - Land of Radha Krishna - ₹7000</option>
+
+          <option>Haridwar - Ganga Aarti at Har Ki Pauri - ₹8000</option>
+
+          <option>Rishikesh - Yoga capital & retreats - ₹9000</option>
+
+          <option>Ayodhya - Birthplace of Lord Ram - ₹8500</option>
+
+          <option>
+            Tirupati Balaji - Richest temple of Lord Venkateswara - ₹10000
+          </option>
+
+          <option>Rameshwaram - Jyotirlinga of Lord Shiva - ₹11000</option>
+
+          <option>Somnath - First Jyotirlinga - ₹10200</option>
+
+          <option>Dwarka - Kingdom of Lord Krishna - ₹11500</option>
+
+          <option>Badrinath - Char Dham of Lord Vishnu - ₹14000</option>
+
+          <option>Vaishno Devi - Holy cave temple - ₹9500</option>
+        </select>
+        <small class="error" id="err-dest"></small>
+      </div>
+
+      <div class="input-group">
+        <label>Travel Date *</label>
+        <input type="date" id="date" required min="2026-04-11" />
+        <small class="error" id="err-date"></small>
+      </div>
+
+      <div class="input-group">
+        <label>Number of Travelers *</label>
+        <input type="number" id="people" min="1" max="50" />
+        <small class="error" id="err-people"></small>
+      </div>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+
+    <div id="successBox" class="success-box">
+      <div class="ticket">
+
+        <div class="ticket-header">
+          <h2>🎉 Booking Confirmed</h2>
+          <div class="booking-id">#<span id="bookingId"></span></div>
+        </div>
+
+        <div class="ticket-body">
+          <div class="row"><span>👤 Name</span><span id="s-name"></span></div>
+          <div class="row"><span>📧 Email</span><span id="s-email"></span></div>
+          <div class="row"><span>📱 Mobile</span><span id="s-mobile"></span></div>
+          <div class="row"><span>📍 Destination</span><span id="s-dest"></span></div>
+          <div class="row"><span>📅 Date</span><span id="s-date"></span></div>
+          <div class="row"><span>👥 Travelers</span><span id="s-people"></span></div>
+          <div class="row"><span>💰 Price / Person</span><span id="s-price"></span></div>
+
+          <hr>
+
+          <div class="row"><span>Subtotal</span><span id="s-subtotal"></span></div>
+          <div class="row"><span>GST (7%)</span><span id="s-gst"></span></div>
+        </div>
+
+        <div class="ticket-footer">
+          <div>Total</div>
+          <div class="total-price" id="s-total"></div>
+        </div>
+
+        <button onclick="closeBox()">Close</button>
+
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>

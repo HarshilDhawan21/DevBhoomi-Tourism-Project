@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBhoomi | Gallery</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <style>
+      :root {
+        --bg: #0a1628;
+        --card: rgba(255, 255, 255, 0.05);
+        --border: rgba(255, 255, 255, 0.08);
+        --accent: #ff6b00;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: white;
+      }
+
+      .container {
+        padding: 110px 40px 40px;
+      }
+
+      .title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        color: #aaa;
+        margin-bottom: 30px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-card {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        transition: 0.3s;
+      }
+
+      .gallery-card:hover {
+        transform: scale(1.05);
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      }
+
+      .overlay h3 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .overlay p {
+        margin: 4px 0 0;
+        font-size: 12px;
+        color: #ddd;
+      }
+
+      .container {
+        padding: 110px 40px 40px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-card {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .gallery-card:hover {
+        transform: scale(1.05);
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-logo" onclick="showPage('home')">
+        🏛️ DEVBHOOMI
+        <span>Incredible India Travels</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-btn"> Home </a>
+        <a href="destination.html" class="nav-btn"> Destinations </a>
+        <a href="pilgrimage.html" class="nav-btn"> Pilgrimage </a>
+        <a href="gallery.html" class="nav-btn"> Gallery </a>
+        <a href="about.html" class="nav-btn"> About </a>
+        <a href="form.html" class="nav-btn cta"> Book Now </a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="title">Gallery of भारत 🛕</div>
+
+      <div class="gallery">
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=800"
+          />
+          <div class="overlay">Varanasi</div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="Assets/Destination/bg.jpg" />
+          <div class="overlay">Kedarnath</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1687627045984-82ec8a4d2697"
+          />
+          <div class="overlay">Vrindavan</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1687735175748-a19b5adb7591"
+          />
+          <div class="overlay">Haridwar</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1720819029162-8500607ae232"
+          />
+          <div class="overlay">Rishikesh</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1726501604891-19fb7f7cd37b"
+          />
+          <div class="overlay">Ayodhya</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800"
+          />
+          <div class="overlay">Tirupati Balaji</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1692700827093-f526f0b32923"
+          />
+          <div class="overlay">Rameshwaram</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1591700430569-9469d38b1006"
+          />
+          <div class="overlay">Somnath</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1711547979445-a72c87dfd004"
+          />
+          <div class="overlay">Dwarka</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1702127047573-36a11c318774"
+          />
+          <div class="overlay">Badrinath</div>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1719377678428-d9bcec6976f3"
+          />
+          <div class="overlay">Vaishno Devi</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
